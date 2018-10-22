@@ -5,7 +5,9 @@ D = 1.69e-10; %cmhr^-1
 dt = 0.2e-9;
 dx2 = 3e-10;
 k = D*dt/(dx2^2);
-hold on
+xlabel('Depth');
+ylabel('Concentration');
+hold on;
 
 for j = 1:5
     C_vector(1) = C_vector(1) + k*((max(C_vector)) - 2*C_vector(1) + C_vector(2));
