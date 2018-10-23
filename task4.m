@@ -1,7 +1,7 @@
 %% Task 4 and 5
 C_vector = zeros(1,100);
 C_vector(1:2) = 2e19;
-D = 1.69e-10;   %cmhr^-1
+D = 1.69e-10;   %cm^2 hr^-1
                 %temperature = 1050C, dopant = Boron
 %dt = 0.2e-9;    %hr
 %dx2 = 3e-10;
@@ -18,7 +18,7 @@ for j = 1:1000
     for i = 2:length(C_vector)-1  % start at 2 because there is no value left of the first element
         C_vector(i) = C_vector(i) + k*(C_vector(i-1) - 2*C_vector(i) + C_vector(i+1));
     end
-    %plot(C_vector);
-    %pause(5)
+%     plot(C_vector);
+%     pause(0.005)
 end
 plot(C_vector);
