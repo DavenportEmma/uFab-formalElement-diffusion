@@ -10,9 +10,10 @@ dx2 = 6e-7;     %chose this number so k < 1/2
 k = D*dt/(dx2^2);
 xlabel('Depth');
 ylabel('Concentration');
-hold on;
 
 plot(C_vector);
+hold on;
+
 for j = 1:1000
     C_vector(1) = C_vector(1) + k*((max(C_vector)) - 2*C_vector(1) + C_vector(2));
     for i = 2:length(C_vector)-1  % start at 2 because there is no value left of the first element
