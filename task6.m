@@ -12,13 +12,16 @@ xlabel('Depth');
 ylabel('Concentration');
 
 semilogy(C_vector);
-hold
+
+C_vector(1) = 2e19;
+
+hold on
 for j = 1:1000
-    C_vector(1) = C_vector(1) + k*(2e19 - 2*C_vector(1) + C_vector(2));
+    
     for i = 2:length(C_vector)-1  % start at 2 because there is no value left of the first element
         C_vector(i) = C_vector(i) + k*(C_vector(i-1) - 2*C_vector(i) + C_vector(i+1));
     end
-    semilogy(0:length(C_vector) -1, C_vector);
-    pause(0.005)
+   % semilogy(0:length(C_vector) -1, C_vector);
+
 end
-% plot(C_vector);
+semilogy(C_vector);
