@@ -19,6 +19,6 @@ for j = 1:1000
         C_vector(i) = C_vector(i) + k*(C_vector(i-1) - 2*C_vector(i) + C_vector(i+1));
     end
     semilogy(0:length(C_vector) -1, C_vector);
-    pause(0.005)
+   % pause(0.005)
 end
 % plot(C_vector);
