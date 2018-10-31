@@ -6,13 +6,14 @@ D = 1.69e-10;   %cm^2 hr^-1
 %dt = 0.2e-9;    %hr
 %dx2 = 3e-10;
 dt = 1e-3;      %divides 1 hour into 1000 points
-dx2 = 6e-7;     %chose this number so k < 1/2
-k = D*dt/(dx2^2);
-xlabel('Depth');
-ylabel('Concentration');
+dx = 6e-7;     %chose this number so k < 1/2
+k = D*dt/(dx^2);
 
-semilogy(C_vector);
+X_vector = (0:dx:(length(C_vector)*dx)-dx);
 
+plot(X_vector, C_vector);
+xlabel('Depth (cm)');
+ylabel('Concentration (/cm^3)');
 C_vector(1) = 2e19;
 
 hold on
@@ -24,4 +25,4 @@ for j = 1:1000
    % pause(0.005)
    % semilogy(0:length(C_vector) -1, C_vector);
 end
-semilogy(C_vector);
+plot(X_vector, C_vector);
