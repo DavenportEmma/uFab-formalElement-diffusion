@@ -13,6 +13,7 @@ k = D*dt/(dx^2);
 X_vector = (0:dx:(length(C_vector)*dx)-dx);
 
 plot(X_vector, C_vector);
+% semilogy(X_vector, C_vector);
 xlabel('Depth (cm)');
 ylabel('Concentration (/cm^3)');
 hold on;
@@ -23,6 +24,7 @@ for j = 1:1000
         C_vector(i) = C_vector(i) + k*(C_vector(i-1) - 2*C_vector(i) + C_vector(i+1));
     end
 %     plot(X_vector, C_vector);
+%     semilogy(X_vector, C_vector);
 %     pause(0.005)
 end
 plot(X_vector, C_vector);
