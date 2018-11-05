@@ -1,5 +1,5 @@
 %% Task 6
-C_vector = zeros(1,100);
+C_vector = zeros(1,200);
 C_vector(1:2) = 2e19;
 D = 1.69e-10;   %cm^2 hr^-1
                 %temperature = 1050C, dopant = Boron
@@ -25,4 +25,4 @@ for j = 1:1000
 %    plot(X_vector, C_vector);
 end
 plot(X_vector, C_vector);
-% semilogy(X_vector, C_vector);
+% semilogy(X_vector, C_vector); 

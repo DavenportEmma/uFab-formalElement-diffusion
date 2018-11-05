@@ -6,7 +6,7 @@ plot(C_vector);
 xlabel('Depth');
 ylabel('Concentration');
 hold on;
-k = 0.7;
+k = 0.5;
 
 for j = 1:5
     C_vector(1) = k*((max(C_vector) + C_vector(2)));
